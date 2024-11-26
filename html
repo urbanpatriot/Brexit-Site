@@ -1,0 +1,685 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brexit E-learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Brexit E-learning Platform</h1>
+    </header>
+
+    <div class="tabs">
+        <button class="tablinks" onclick="openChapter(event, 'Introductie')">Introductie</button>
+        <button class="tablinks" onclick="openChapter(event, 'PolitiekeGevolgen')">Politieke Gevolgen</button>
+        <button class="tablinks" onclick="openChapter(event, 'Migratie')">Migratie</button>
+        <button class="tablinks" onclick="openChapter(event, 'Euroscepticisme')">Euroscepticisme</button>
+        <button class="tablinks" onclick="openChapter(event, 'Relevantie')">Relevantie voor Nederland</button>
+        <button class="tablinks" onclick="openChapter(event, 'Eindtoets')">Eindtoets</button>
+        <button class="tablinks" onclick="openChapter(event, 'Docentenhoek')">Docentenhoek</button>
+    </div>
+
+    <div id="Introductie" class="tabcontent">
+        <h2>Introductie tot Brexit</h2>
+        <p>Welkom bij de Brexit E-learning! Brexit, oftewel de uittreding van het Verenigd Koninkrijk uit de Europese Unie, is een van de meest significante politieke gebeurtenissen van de 21ste eeuw. Dit had verstrekkende gevolgen voor de politieke, economische en sociale dynamiek in zowel het VK als de rest van Europa. Deze E-learning geeft je de tools om de impact van deze gebeurtenis beter te begrijpen.</p>
+        <h3>Wat is Brexit?</h3>
+        <p>Op 23 juni 2016 koos het Verenigd Koninkrijk in een referendum voor vertrek uit de Europese Unie. Het vertrek vond officieel plaats op 31 januari 2020. De gevolgen voor het VK, de EU en de rest van de wereld blijven zich ontvouwen. In deze cursus gaan we onderzoeken hoe Brexit het politieke landschap, de migratie en het euroscepticisme in Europa heeft beïnvloed.</p>
+        <h3>Waarom is Brexit belangrijk voor jou?</h3>
+        <p>Voor Nederlanders, die nauw verbonden zijn met de EU en de Britse economie, biedt het begrijpen van de gevolgen van Brexit waardevolle inzichten in hoe politieke beslissingen internationale samenwerking, handel en migratie kunnen beïnvloeden.</p>
+
+<div class="poll">
+    <h3>Hoe belangrijk denk je dat de Brexit is voor jouw toekomst?</h3>
+    <form id="poll1">
+        <input type="radio" id="poll1-option1" name="poll1" value="Zeer belangrijk">
+        <label for="poll1-option1">Zeer belangrijk</label><br>
+
+        <input type="radio" id="poll1-option2" name="poll1" value="Belangrijk">
+        <label for="poll1-option2">Belangrijk</label><br>
+
+        <input type="radio" id="poll1-option3" name="poll1" value="Neutraal">
+        <label for="poll1-option3">Neutraal</label><br>
+
+        <input type="radio" id="poll1-option4" name="poll1" value="Niet belangrijk">
+        <label for="poll1-option4">Niet belangrijk</label><br>
+
+        <input type="radio" id="poll1-option5" name="poll1" value="Helemaal niet belangrijk">
+        <label for="poll1-option5">Helemaal niet belangrijk</label><br><br>
+
+        <button type="button" onclick="submitPoll('poll1')">Stem</button>
+    </form>
+
+    <div id="poll1-result" class="result" style="display: none;">
+        <h4>Resultaten:</h4>
+        <ul>
+            <li>Zeer belangrijk: <span id="poll1-zeer-belangrijk-count">0</span> stemmen</li>
+            <li>Belangrijk: <span id="poll1-belangrijk-count">0</span> stemmen</li>
+            <li>Neutraal: <span id="poll1-neutraal-count">0</span> stemmen</li>
+            <li>Niet belangrijk: <span id="poll1-niet-belangrijk-count">0</span> stemmen</li>
+            <li>Helemaal niet belangrijk: <span id="poll1-helemaal-niet-belangrijk-count">0</span> stemmen</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    const pollData = {
+        poll1: {
+            "Zeer belangrijk": 0,
+            "Belangrijk": 0,
+            "Neutraal": 0,
+            "Niet belangrijk": 0,
+            "Helemaal niet belangrijk": 0
+        }
+    };
+
+    function submitPoll(pollId) {
+        const selectedOption = document.querySelector(`form#${pollId} input[type="radio"]:checked`);
+
+        if (!selectedOption) {
+            alert("Selecteer een optie voordat je stemt!");
+            return;
+        }
+
+        const optionValue = selectedOption.value;
+        pollData[pollId][optionValue]++;
+
+        displayResults(pollId);
+    }
+
+    function displayResults(pollId) {
+        const resultDiv = document.getElementById(`${pollId}-result`);
+        resultDiv.style.display = "block";
+
+        for (const option in pollData[pollId]) {
+            const optionId = `${pollId}-${option.toLowerCase().replace(/\s+/g, '-')}-count`;
+            const countSpan = document.getElementById(optionId);
+            countSpan.textContent = pollData[pollId][option];
+        }
+    }
+</script>
+
+        <h3>Introductiefilmpje 'De Brexit is Rond'</h3>
+<iframe 
+    src="https://player.ntr.nl/index.php?id=WO_NTR_16405214" 
+    width="300" 
+    height="200" 
+    frameborder="0" 
+    allowfullscreen>
+</iframe>
+
+</div>
+
+    <div id="PolitiekeGevolgen" class="tabcontent">
+        <h2>De Politieke Gevolgen van Brexit</h2>
+        <p>In dit hoofdstuk onderzoeken we de politieke gevolgen van Brexit en verschuivingen binnen partijen.</p>
+
+        <section>
+            <h3>Het politieke landschap vóór Brexit:</h3>
+            <h4>Politieke situatie vóór Brexit</h4>
+            <p>Het Verenigd Koninkrijk heeft een unieke staatsinrichting:
+Geen geschreven grondwet, maar gebruik van gewoonterecht en parlementaire soevereiniteit,dat betekent dus dat het parlement de meeste macht heeft in het VK. De wetten die worden aangenomen door het parlement kunnen dus niet worden vernietigd door de rechterlijke macht. Dit systeem zorgde voor veel  discussies over de rol van EU-wetgeving, veel Britten vonden dat de EU te veel invloed had op het bestuur van het VK.</p>
+            <p>Binnen de EU konden mensen vrij werken in andere lidstaten zonder een visum nodig te hebben. Veel arbeidmigranten uit Oost-Europa, zoalss Polen, kwamen naar het VK om te werken in sectoren zoals de landbouw,horeca en bouw. Sommige Britten dachten dat er te veel migranten kwamen en dit banen wegnam van Britse burgers of dat de migranten te veel druk legden op openbare diensten, zoals ziekenhuizen of scholen. wa
+            <h4>Belangrijke politieke partijen:</h4>
+            <ul>
+                <li>De Conservative Party: Oorspronkelijk voor een sterkere positie binnen de EU, maar met een groeiende eurosceptische vleugel.David Cameron (toen leider van deze partij) beloofde een referendum in 2013 onder druk van UKIP en interne verdeeldheid.</li>
+                <li>De Labour Party: Tegen Brexit, maar met verdeeldheid binnen de partij over mate van de EU-integratie.Stedelijke Labour-stemmers kozen vaak voor Remain, terwijl landelijke arbeiderskiezers Leave steunden.</li>
+                <li>UKIP: Een eurosceptische partij die zich volledig tegen het EU-lidmaatschap verzette.Ook was deze partij tegen immigratie.</li>
+            </ul>
+            <h4>Belangrijkste gebeurtenissen tijdens Brexit-proces:</h4>
+            <p>Het referendum van 2016 werd gehouden onder de slogan "Take Back Control," een kernpunt van de Leave-campagne.Deze campagne gebruikte het idee dat het VK weer controle moest krijgen over wie het land inkomt. Ze wilden strengere immigratieregels invoeren, zodat alleen mensen die echt nodig waren voor de economie konden komen.</p>
+            
+        </section>
+
+        <section>
+            <h3>Politieke verschuivingen door Brexit:</h3>
+            <h4>Opkomst van nieuwe partijen</h4>
+            <p>De Brexit Party werd opgericht om teleurgestelde Leave-kiezers te verenigen, met succes bij de Europese verkiezingen van 2019.
+Ook leidde interne verdeeldheid binnen Labour en Conservatieven tot machtsverschuivingen.</p>
+            <h4>Regionale spanningen</h4>
+            <ul>
+                <li>Schotland: De meerderheid van de Schotten stemde voor het blijven in de EU. Dit versterkte de roep om onafhankelijkheid en een nieuw referendum over Schotse onafhankelijkheid. Brexit veroorzaakte dus ook spanningen binnen de traditionele unie (het VK).</li>
+                <li>Noord-Ierland: De regionale spanning in Ierland kwam voort uit het feit dat de Republiek Ierland (EU-lid) en Noord-Ierland (deel van het VK) nu verschillende handels- en grensregels zouden hebben door Brexit. De open grens tussen Noord-Ierland en de Republiek Ierland was belangrijk voor de vrede en economie, maar een harde grens zou dit verstoren. De backstop-poging om dit te vermijden werd afgewezen door velen in het VK, waardoor het gevoel van verdeeldheid tussen de landen toenam.</li>
+            </ul>
+            <h4>Analyse</h4>
+            <p>Brexit veroorzaakte een grote politieke breuk in het VK. Partijen werden verdeeld over Brexit, waarbij traditionele scheidingen tussen links en rechts werden vervangen door pro- en anti-EU-bondgenootschappen.</p>
+        </section>
+
+        <img src="brexit.webp" alt="Leave-remain kaart" width="300" height="400">
+<div class="poll">
+    <h3>Denk je dat de Brexit uiteindelijk positieve of negatieve gevolgen heeft voor het VK?</h3>
+    <form id="poll2">
+        <input type="radio" id="poll2-option1" name="poll2" value="Positief">
+        <label for="poll2-option1">Positief</label><br>
+
+        <input type="radio" id="poll2-option2" name="poll2" value="Negatief">
+        <label for="poll2-option2">Negatief</label><br>
+
+        <input type="radio" id="poll2-option3" name="poll2" value="Beide">
+        <label for="poll2-option3">Beide</label><br>
+
+        <input type="radio" id="poll2-option4" name="poll2" value="Geen mening">
+        <label for="poll2-option4">Geen mening</label><br><br>
+
+        <button type="button" onclick="submitPoll('poll2')">Stem</button>
+    </form>
+
+    <div id="poll2-result" class="result" style="display: none;">
+        <h4>Resultaten:</h4>
+        <ul>
+            <li>Positief: <span id="poll2-positief-count">0</span> stemmen</li>
+            <li>Negatief: <span id="poll2-negatief-count">0</span> stemmen</li>
+            <li>Beide: <span id="poll2-beide-count">0</span> stemmen</li>
+            <li>Geen mening: <span id="poll2-geen-mening-count">0</span> stemmen</li>
+        </ul>
+    </div>
+</div>
+<script>
+    const pollData = {
+        poll2: { "Positief": 0, "Negatief": 0, "Beide": 0, "Geen mening": 0 },
+        poll3: { "Ja": 0, "Nee": 0, "Ik weet het niet": 0 },
+        poll4: { "Ja": 0, "Nee": 0, "Geen mening": 0 },
+        poll5: { "Ja": 0, "Nee": 0, "Ik weet het niet": 0 }
+    };
+
+    function submitPoll(pollId) {
+        const selectedOption = document.querySelector(`form#${pollId} input[type="radio"]:checked`);
+
+        if (!selectedOption) {
+            alert("Selecteer een optie voordat je stemt!");
+            return;
+        }
+
+        const optionValue = selectedOption.value;
+        pollData[pollId][optionValue]++;
+
+        displayResults(pollId);
+    }
+
+    function displayResults(pollId) {
+        const resultDiv = document.getElementById(`${pollId}-result`);
+        resultDiv.style.display = "block";
+
+        for (const option in pollData[pollId]) {
+            const optionId = `${pollId}-${option.toLowerCase().replace(/\s+/g, '-')}-count`;
+            const countSpan = document.getElementById(optionId);
+            countSpan.textContent = pollData[pollId][option];
+        }
+    }
+</script>
+
+    </div>
+
+    <div id="Migratie" class="tabcontent">
+        <h2>Migratie en Brexit</h2>
+        <p>Dit hoofdstuk behandelt de impact van Brexit op migratie voor zowel arbeidsmigratie als arbeidsmigratie</p>
+
+        <section>
+            <h3>Arbeidsmigratie vóór en na Brexit:</h3>
+            <h4>Vóór Brexit</h4>
+            <p>Migratie was een essentieel aspect van de Britse economie.EU-burgers, vooral uit Oost-Europa, vulden vacatures in sectoren zoals de bouw, landbouw en horeca. In 2015 kwamen 308.000 mensen naar het VK voor werk, waarvan het merendeel EU-burgers was.</p>
+            <h4>Na Brexit</h4>
+            <p>Door het verlies van het vrije verkeer van personen na de Brexit, voerde het VK een nieuw migratiesysteem in, gebaseerd op punten. Dit systeem beoogde gekwalificeerde niet-EU-migranten aan te trekken, maar zorgde voor tekorten in sectoren die afhankelijk waren van EU-arbeidsmigranten.</p>
+        </section>
+
+        <section>
+            <h3>Asielmigratie en Brexit:</h3>
+            <h4>Vóór Brexit</h4>
+            <p>Het VK ontving asielzoekers, voornamelijk uit conflictgebieden zoals Syrië,Irak en Afghanistan.Sectoren zoals landbouw, horeca en bouw waren sterk afhankelijk van EU-arbeidskrachten. In 2015 werden er 30% meer asielaanvragen ingediend dan in voorgaande jaren.</p>
+            <h4>Na Brexit</h4>
+            <p>Na de Brexit daalde de instroom van EU-arbeidsmigranten drastisch door het verlies van vrij verkeer, het asielbeleid werd dus gewijzigd. EU-burgers die voor 2020 in het VK woonden, moesten hun verblijfsstatus aanvragen via het EU Settlement Scheme, dit leidde tot een toename van niet-EU-arbeidsmigranten, maar een tekort veroorzaakte in laaggeschoolde sectoren..</p>
+            <h4>Analyse</h4>
+            <p>Na Brexit veranderde het VK de manier waarop het mensen toeliet om in het land te werken. Voorheen kwamen veel EU-burgers naar het VK om te werken in sectoren zoals de bouw, landbouw en horeca, wat belangrijk was voor de economie. Maar na Brexit werd het moeilijker voor EU-migranten om naar het VK te komen, omdat het nieuwe regels introduceerde die alleen gekwalificeerde arbeiders van buiten de EU toestonden. Dit leidde tot tekorten in sectoren die afhankelijk waren van de EU-arbeidskrachten, wat de werkgelegenheid in die sectoren moeilijker maakte.</p>
+        </section>
+<div class="poll">
+    <h3>Vind jij dat landen strengere migratieregels moeten invoeren vanwege Brexit?</h3>
+    <form id="poll3">
+        <input type="radio" id="poll3-option1" name="poll3" value="Ja">
+        <label for="poll3-option1">Ja, landen moeten strengere regels hebben.</label><br>
+
+        <input type="radio" id="poll3-option2" name="poll3" value="Nee">
+        <label for="poll3-option2">Nee, migratie is belangrijk voor economische groei.</label><br>
+
+        <input type="radio" id="poll3-option3" name="poll3" value="Ik weet het niet">
+        <label for="poll3-option3">Ik weet het niet</label><br><br>
+
+        <button type="button" onclick="submitPoll('poll3')">Stem</button>
+    </form>
+
+    <div id="poll3-result" class="result" style="display: none;">
+        <h4>Resultaten:</h4>
+        <ul>
+            <li>Ja: <span id="poll3-ja-count">0</span> stemmen</li>
+            <li>Nee: <span id="poll3-nee-count">0</span> stemmen</li>
+            <li>Ik weet het niet: <span id="poll3-ik-weet-het-niet-count">0</span> stemmen</li>
+        </ul>
+    </div>
+</div>
+<script>
+    const pollData = {
+        poll2: { "Positief": 0, "Negatief": 0, "Beide": 0, "Geen mening": 0 },
+        poll3: { "Ja": 0, "Nee": 0, "Ik weet het niet": 0 },
+        poll4: { "Ja": 0, "Nee": 0, "Geen mening": 0 },
+        poll5: { "Ja": 0, "Nee": 0, "Ik weet het niet": 0 }
+    };
+
+    function submitPoll(pollId) {
+        const selectedOption = document.querySelector(`form#${pollId} input[type="radio"]:checked`);
+
+        if (!selectedOption) {
+            alert("Selecteer een optie voordat je stemt!");
+            return;
+        }
+
+        const optionValue = selectedOption.value;
+        pollData[pollId][optionValue]++;
+
+        displayResults(pollId);
+    }
+
+    function displayResults(pollId) {
+        const resultDiv = document.getElementById(`${pollId}-result`);
+        resultDiv.style.display = "block";
+
+        for (const option in pollData[pollId]) {
+            const optionId = `${pollId}-${option.toLowerCase().replace(/\s+/g, '-')}-count`;
+            const countSpan = document.getElementById(optionId);
+            countSpan.textContent = pollData[pollId][option];
+        }
+    }
+</script>
+
+
+    </div>
+
+    <div id="Euroscepticisme" class="tabcontent">
+        <h2>Euroscepticisme in Europa</h2>
+        <p>Euroscepticisme is een belangrijk onderwerp dat vaak verband houdt met Brexit.</p>
+
+        <section>
+            <h3>Wat is euroscepticisme?</h3>
+            <p>Euroscepticisme betekent dat mensen kritisch zijn over de Europese Unie (EU). Ze vinden vaak dat de EU te veel invloed heeft op hun land en willen dat er veranderingen komen. Er zijn twee soorten euroscepticisme:</p>
+            <ul>
+                <li>Hard euroscepticisme:Deze mensen willen helemaal geen lid meer zijn van de EU en vinden dat hun land beter af is buiten de Unie. Voorbeelden van partijen die hard eurosceptisch zijn, zijn UKIP in het VK en de AfD in Duitsland.</li>
+                <li>Zacht euroscepticisme:Deze mensen vinden ook dat de EU niet perfect is, maar ze willen wel dat het land lid blijft. Ze vinden dat de EU veranderd moet worden om beter te werken, zoals de Italiaanse Lega en Fidesz in Hongarije.</li>
+            </ul>
+            <p>Brexit begon als een zacht eurosceptisch idee, waarbij veel mensen in het VK vonden dat de EU te veel invloed had en dat er veranderingen nodig waren. Ze wilden meer controle over hun eigen wetten, grenzen en economie, maar bleven wel voor samenwerking met de EU. Naarmate het debat vorderde, werden de stemmen van de hardere eurosceptici sterker, die pleitten voor een volledig vertrek uit de EU. Uiteindelijk leidde dit tot de Brexit-campagne, waarin het idee van een volledige uittreding uit de EU het belangrijkste werd.</p>
+
+        </section>
+
+        <section>
+            <h3>Brexit als inspiratiebron:</h3>
+            <p>De Brexit heeft de steun voor eurosceptische partijen in landen zoals Italië en Frankrijk vergroot. Deze partijen gebruiken de onvrede van mensen over de EU om stemmen te winnen, vaak door te zeggen dat hun land beter af zou zijn zonder de EU. Ze stellen dat Brexit een voorbeeld is van hoe landen meer controle kunnen krijgen.
+
+Veel van deze partijen gebruiken echter Brexit als dreiging om betere deals van de EU te krijgen, zonder echt van plan te zijn om de EU te verlaten. Zoals Dr. Martill zegt, wordt anti-EU retoriek vaak gebruikt om stemmen te winnen, en om de EU onder druk te zetten voor veranderingen, zonder echt weg te willen.</p>
+            <h4>Essay</h4>
+            <p>Schrijf een essay van 400 woorden over de stelling:"Brexit heeft de EU sterker gemaakt door haar eenheid te testen."Gebruik 2 argumenten en bepaal zelf je kant van de stelling.
+        </section>
+<div class="poll">
+    <h3>Denk je dat Nederland ooit een referendum moet houden over EU-lidmaatschap?</h3>
+    <form id="poll4">
+        <input type="radio" id="poll4-option1" name="poll4" value="Ja">
+        <label for="poll4-option1">Ja, Nederland moet een referendum houden.</label><br>
+
+        <input type="radio" id="poll4-option2" name="poll4" value="Nee">
+        <label for="poll4-option2">Nee, Nederland moet in de EU blijven zonder referendum.</label><br>
+
+        <input type="radio" id="poll4-option3" name="poll4" value="Geen mening">
+        <label for="poll4-option3">Geen mening</label><br><br>
+
+        <button type="button" onclick="submitPoll('poll4')">Stem</button>
+    </form>
+
+    <div id="poll4-result" class="result" style="display: none;">
+        <h4>Resultaten:</h4>
+        <ul>
+            <li>Ja: <span id="poll4-ja-count">0</span> stemmen</li>
+            <li>Nee: <span id="poll4-nee-count">0</span> stemmen</li>
+            <li>Geen mening: <span id="poll4-geen-mening-count">0</span> stemmen</li>
+        </ul>
+    </div>
+</div>
+<script>
+    const pollData = {
+        poll2: { "Positief": 0, "Negatief": 0, "Beide": 0, "Geen mening": 0 },
+        poll3: { "Ja": 0, "Nee": 0, "Ik weet het niet": 0 },
+        poll4: { "Ja": 0, "Nee": 0, "Geen mening": 0 },
+        poll5: { "Ja": 0, "Nee": 0, "Ik weet het niet": 0 }
+    };
+
+    function submitPoll(pollId) {
+        const selectedOption = document.querySelector(`form#${pollId} input[type="radio"]:checked`);
+
+        if (!selectedOption) {
+            alert("Selecteer een optie voordat je stemt!");
+            return;
+        }
+
+        const optionValue = selectedOption.value;
+        pollData[pollId][optionValue]++;
+
+        displayResults(pollId);
+    }
+
+    function displayResults(pollId) {
+        const resultDiv = document.getElementById(`${pollId}-result`);
+        resultDiv.style.display = "block";
+
+        for (const option in pollData[pollId]) {
+            const optionId = `${pollId}-${option.toLowerCase().replace(/\s+/g, '-')}-count`;
+            const countSpan = document.getElementById(optionId);
+            countSpan.textContent = pollData[pollId][option];
+        }
+    }
+</script>
+
+
+  <section>
+    <h3>Actieve Tijdlijn van Euroscepticisme in Europa</h3>
+    <p>Bekijk de groei van eurosceptische bewegingen in Europa sinds 2016. Klik op een jaar om meer te leren over belangrijke gebeurtenissen.</p>
+
+    <div class="timeline-container">
+        <ul class="timeline">
+            <li class="timeline-item" onclick="showEvent(2016)">
+                <span class="timeline-year">2016</span>
+                <span class="timeline-event">Brexit Referendum in het VK</span>
+            </li>
+            <li class="timeline-item" onclick="showEvent(2017)">
+                <span class="timeline-year">2017</span>
+                <span class="timeline-event">Opkomst van de Italiaanse Vijfsterrenbeweging</span>
+            </li>
+            <li class="timeline-item" onclick="showEvent(2018)">
+                <span class="timeline-year">2018</span>
+                <span class="timeline-event">Lega en andere eurosceptische partijen winnen terrein in Italië</span>
+            </li>
+            <li class="timeline-item" onclick="showEvent(2019)">
+                <span class="timeline-year">2019</span>
+                <span class="timeline-event">Brexit wordt officieel goedgekeurd, opkomst van de Brexit Party in het VK</span>
+            </li>
+            <li class="timeline-item" onclick="showEvent(2020)">
+                <span class="timeline-year">2020</span>
+                <span class="timeline-event">Eurosceptische partijen in Polen en Hongarije nemen verder toe</span>
+            </li>
+            <li class="timeline-item" onclick="showEvent(2021)">
+                <span class="timeline-year">2021</span>
+                <span class="timeline-event">Opkomst van eurosceptische partijen in Frankrijk en andere EU-landen</span>
+            </li>
+        </ul>
+    </div>
+
+    <div id="event-details" style="display:none;">
+        <h3 id="event-year"></h3>
+        <p id="event-description"></p>
+    </div>
+</section>
+<script>
+    function showEvent(year) {
+        let eventYear = "";
+        let eventDescription = "";
+
+        switch(year) {
+            case 2016:
+                eventYear = "2016 - Brexit Referendum in het VK";
+                eventDescription = "In 2016 stemde het Verenigd Koninkrijk in een referendum om de EU te verlaten, wat leidde tot de Brexit.";
+                break;
+            case 2017:
+                eventYear = "2017 - Opkomst van de Italiaanse Vijfsterrenbeweging";
+                eventDescription = "In Italië won de populistische Vijfsterrenbeweging terrein, die zich uitsprak tegen de EU.";
+                break;
+            case 2018:
+                eventYear = "2018 - Lega wint in Italië";
+                eventDescription = "De Lega (Lega Nord) werd de grootste partij in Italië, waarbij ze haar eurosceptische standpunten verder uitbreidde.";
+                break;
+            case 2019:
+                eventYear = "2019 - Brexit goedgekeurd, Brexit Party wint";
+                eventDescription = "In 2019 werd Brexit officieel goedgekeurd. De Brexit Party had een groot succes bij de Europese verkiezingen.";
+                break;
+            case 2020:
+                eventYear = "2020 - Groei van euroscepticisme in Polen en Hongarije";
+                eventDescription = "Polen en Hongarije zagen een sterke groei van eurosceptische sentimenten.";
+                break;
+            case 2021:
+                eventYear = "2021 - Euroscepticisme in Frankrijk";
+                eventDescription = "In Frankrijk zijn de eurosceptische partijen zoals het Rassemblement National sterker geworden.";
+                break;
+        }
+
+        document.getElementById("event-year").innerText = eventYear;
+        document.getElementById("event-description").innerText = eventDescription;
+
+        document.getElementById("event-details").style.display = "block";
+    }
+</script>
+<script>
+    function openChapter(evt, chapterName) {
+        let i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(chapterName).style.display = "block";
+
+        evt.currentTarget.className += " active";
+    }
+
+    document.getElementsByClassName("tablinks")[0].click();
+</script>
+
+</body>
+</html>
+</section>
+
+    </div>
+
+
+    <div id="Relevantie" class="tabcontent">
+        <h2>Relevantie voor Nederland</h2>
+        <p>Het e-learning platform over de politieke gevolgen van de Brexit is bijzonder relevant voor jullie, als toekomstige generatie in Nederland. Aangezien ons land een oprichter van de EU is en een belangrijke handelspartner van zowel de EU als het VK, heeft Brexit grote gevolgen voor de Nederlandse economie en handelsrelaties. Door Brexit te bestuderen, krijgen jullie beter inzicht in hoe politieke beslissingen invloed hebben op zaken als handel, economie en migratie, die cruciaal zijn voor Nederland.
+
+Daarnaast helpt het platform om te begrijpen hoe euroscepticisme is gegroeid, een onderwerp dat ook in Nederland steeds belangrijker wordt. Het biedt jullie de kans om te leren hoe Brexit het vertrouwen in de EU beïnvloedde en welke gevolgen dit heeft voor de toekomstige samenwerking tussen Europese landen. Het platform helpt jullie belangrijke politieke processen te begrijpen en de rol van Nederland in de EU in een tijd van politieke veranderingen.</p>
+
+<div class="reflectieoefening">
+    <h2>Reflectieoefening: De Brexit en Nederland</h2>
+    <p>
+        Lees de onderstaande uitleg en beantwoord de vragen in de tekstvakken. Deze oefening helpt je nadenken over de gevolgen van de Brexit voor Nederland en jouw toekomst.
+    </p>
+
+    <h3>1. Context</h3>
+    <p>
+        Nederland is een van de oprichters van de Europese Unie en heeft nauwe banden met het Verenigd Koninkrijk. De Brexit, het vertrek van het VK uit de EU, heeft invloed op handel, economie en samenwerking. Denk na over hoe zulke politieke beslissingen jouw toekomst en die van Nederland beïnvloeden.
+    </p>
+
+    <h3>2. Reflectievragen</h3>
+    <p> Maak groepjes van 3 of 4 leerlingen. Pak een vel papier en pennen en ga aan de slag. Succes!</p>
+<style>
+  .vraag {
+    display: block;
+    margin-bottom: 10px; 
+    font-size: 16px;
+  }
+</style>
+
+<div class="reflectieoefening">
+    <span class="vraag"><strong>Vraag 1:</strong> Hoe denk je dat jouw werk of studie kan veranderen door de Brexit?</span>
+    <span class="vraag"><strong>Vraag 2:</strong> Wat betekent het voor Nederland als handel met het VK moeilijker wordt?</span>
+    <span class="vraag"><strong>Vraag 3:</strong> Denk je dat Nederland altijd in de EU zou moeten blijven? Waarom wel of niet?</span>
+    <span class="vraag"><strong>Vraag 4:</strong> Wat kun jij doen om politieke processen beter te begrijpen en mee te denken over de toekomst?</span>
+</div>
+
+    <h3>3. Afsluiting</h3>
+    <p>
+        Denk na over alles wat je hebt ingevuld. Welke inzichten heb je gekregen over de invloed van politieke beslissingen, zoals Brexit, op Nederland en jouw leven? 
+    </p>
+    <label for="eindreflectie">
+        <strong>Schrijf nu jouw eindreflectie (Wat heb je geleerd?):</strong>
+
+    <p>Draai je vel om en schrijf je eindreflectie! Als je klaar bent, bespreekt ieder groepje zijn antwoorden voor de klas en is er tijd voor verdere discussie.</p>
+</div>
+
+    </div>
+
+<div id="Eindtoets" class="tabcontent">
+    <h2>Eindtoets</h2>
+    <p>Test je kennis over de Brexit door de onderstaande vragen te beantwoorden. Na het succesvol afronden van de toets ontvang je een digitaal certificaat.</p>
+
+    <h3>Vraag 1: Waarom besloot het Verenigd Koninkrijk in 2016 een referendum te houden over het EU-lidmaatschap?</h3>
+    <form>
+        <input type="radio" id="q1a" name="q1" value="a">
+        <label for="q1a">a) Omdat het VK meer controle wilde over zijn handelsovereenkomsten</label><br>
+        <input type="radio" id="q1b" name="q1" value="b">
+        <label for="q1b">b) Omdat de meerderheid van de bevolking vóór was om de EU te verlaten</label><br>
+        <input type="radio" id="q1c" name="q1" value="c">
+        <label for="q1c">c) Omdat de EU te veel invloed had op Britse wetgeving en soevereiniteit</label><br>
+        <input type="radio" id="q1d" name="q1" value="d">
+        <label for="q1d">d) Omdat het VK wilde uitbreiden en andere landen bij de EU wilde betrekken</label><br>
+    </form>
+    <div id="feedback-q1"></div>
+
+    <h3>Vraag 2: Wat was de belangrijkste economische reden voor Brexit?</h3>
+    <form>
+        <input type="radio" id="q2a" name="q2" value="a">
+        <label for="q2a">a) Het VK wilde meer handelsvrijheid en controle over zijn eigen economie</label><br>
+        <input type="radio" id="q2b" name="q2" value="b">
+        <label for="q2b">b) Het VK wilde stoppen met het betalen van EU-lasten</label><br>
+        <input type="radio" id="q2c" name="q2" value="c">
+        <label for="q2c">c) Het VK wilde een eurozone binnenkomen</label><br>
+        <input type="radio" id="q2d" name="q2" value="d">
+        <label for="q2d">d) Het VK wilde investeren in de landbouwsector</label><br>
+    </form>
+    <div id="feedback-q2"></div>
+
+    <h3>Vraag 3: Wat was de grootste uitdaging van het VK bij het onderhandelen over Brexit?</h3>
+    <form>
+        <input type="radio" id="q3a" name="q3" value="a">
+        <label for="q3a">a) Het behouden van een vrijhandelsakkoord met de VS</label><br>
+        <input type="radio" id="q3b" name="q3" value="b">
+        <label for="q3b">b) Het voorkomen van een harde grens tussen Noord-Ierland en de Republiek Ierland</label><br>
+        <input type="radio" id="q3c" name="q3" value="c">
+        <label for="q3c">c) Het verkrijgen van concessies van de EU om de migratie van EU-burgers te beperken</label><br>
+        <input type="radio" id="q3d" name="q3" value="d">
+        <label for="q3d">d) Het verwerven van een hogere macht binnen de EU</label><br>
+    </form>
+    <div id="feedback-q3"></div>
+
+    <h3>Vraag 4: Leg uit wat de backstop-regeling was en waarom deze zo controversieel was tijdens de Brexit-onderhandelingen.</h3>
+    <textarea name="answer4" rows="4" cols="50"></textarea><br>
+    <div id="feedback-q4"></div>
+
+    <h3>Vraag 5: Hoe heeft Brexit invloed gehad op de relatie tussen Schotland en Engeland?</h3>
+    <textarea name="answer5" rows="4" cols="50"></textarea><br>
+    <div id="feedback-q5"></div>
+
+    <h3>Vraag 6: Wat is euroscepticisme en hoe heeft de Brexit-campagne dit beïnvloed in Europa? Geef een voorbeeld van een land waar de steun voor eurosceptische partijen is toegenomen door de Brexit.</h3>
+    <textarea name="answer6" rows="4" cols="50"></textarea><br>
+    <div id="feedback-q6"></div>
+
+    <button type="button" id="submitBtn" onclick="checkAnswers()">Verzend Toets</button>
+
+    <div id="result" style="display:none; margin-top: 20px;">
+    </div>
+</div>
+
+<script>
+function checkAnswers() {
+    let score = 0;
+
+    if (document.getElementById('q1c').checked) {
+        score++;
+        document.getElementById('feedback-q1').innerHTML = "Correct!";
+    } else {
+        document.getElementById('feedback-q1').innerHTML = "Fout. Het juiste antwoord is: c) Omdat de EU te veel invloed had op Britse wetgeving en soevereiniteit.";
+    }
+
+    if (document.getElementById('q2a').checked) {
+        score++;
+        document.getElementById('feedback-q2').innerHTML = "Correct!";
+    } else {
+        document.getElementById('feedback-q2').innerHTML = "Fout. Het juiste antwoord is: a) Het VK wilde meer handelsvrijheid en controle over zijn eigen economie.";
+    }
+
+    if (document.getElementById('q3b').checked) {
+        score++;
+        document.getElementById('feedback-q3').innerHTML = "Correct!";
+    } else {
+        document.getElementById('feedback-q3').innerHTML = "Fout. Het juiste antwoord is: b) Het voorkomen van een harde grens tussen Noord-Ierland en de Republiek Ierland.";
+    }
+</script> 
+
+<script>
+function checkAnswers() {
+    let score = 0;
+
+    let answer4 = document.querySelector('textarea[name="answer4"]').value.toLowerCase();
+    let correctAnswer4 = "De backstop-regeling was een vangnet in de Brexit-onderhandelingen om te voorkomen dat er een harde grens zou komen tussen Noord-Ierland en de Republiek Ierland. Het was controversieel omdat het VK mogelijk voor onbepaalde tijd in de EU-douane-unie zou blijven, wat als een inbreuk op de soevereiniteit werd gezien.";
+    
+    if (answer4.includes("backstop") && answer4.includes("controversieel") && answer4.includes("noord-ierland") && answer4.includes("grens") && answer4.includes("douane-unie")) {
+        score++;
+        document.getElementById('feedback-q4').innerHTML = `Correct! De backstop-regeling was een vangnet in de Brexit-onderhandelingen om te voorkomen dat er een harde grens zou komen tussen Noord-Ierland en de Republiek Ierland. Het was controversieel omdat het VK mogelijk voor onbepaalde tijd in de EU-douane-unie zou blijven.`;
+    } else {
+        document.getElementById('feedback-q4').innerHTML = `Fout. Het juiste antwoord is: ${correctAnswer4}`;
+    }
+
+    let answer5 = document.querySelector('textarea[name="answer5"]').value.toLowerCase();
+    let correctAnswer5 = "Brexit heeft de relatie tussen Schotland en Engeland beïnvloed doordat Schotland, dat sterk tegen Brexit was, zich gedwongen voelde om opnieuw na te denken over haar onafhankelijkheid. De meerderheid van de Schotse bevolking stemde tegen Brexit, maar Engeland koos voor uittreden uit de EU. Dit heeft geleid tot een groeiende roep om een nieuw onafhankelijkheidsreferendum.";
+    
+    if (answer5.includes("schotland") && answer5.includes("engeland") && answer5.includes("brexit") && answer5.includes("onafhankelijkheid")) {
+        score++;
+        document.getElementById('feedback-q5').innerHTML = `Correct! Brexit heeft de relatie tussen Schotland en Engeland beïnvloed doordat Schotland zich gedwongen voelde om na te denken over onafhankelijkheid vanwege de Brexit-uitkomst.`;
+    } else {
+        document.getElementById('feedback-q5').innerHTML = `Fout. Het juiste antwoord is: ${correctAnswer5}`;
+    }
+
+    let answer6 = document.querySelector('textarea[name="answer6"]').value.toLowerCase();
+    let correctAnswer6 = "Euroscepticisme is de kritische houding tegenover de Europese Unie, waarbij men twijfels heeft over de effectiviteit, efficiëntie of legitimiteit van de EU. Brexit heeft het euroscepticisme versterkt, vooral in landen waar anti-EU-partijen al sterk waren. Brexit heeft andere landen geïnspireerd om de EU ook kritisch te bekijken. Een voorbeeld hiervan is Frankrijk, waar de steun voor eurosceptische partijen zoals het Front National toenam, omdat de kiezers de voordelen van het lidmaatschap van de EU in twijfel begonnen te trekken.";
+    
+    if (answer6.includes("euroscepticisme") && answer6.includes("brexit") && answer6.includes("eu") && answer6.includes("landen") && answer6.includes("frankrijk")) {
+        score++;
+        document.getElementById('feedback-q6').innerHTML = `Correct! Euroscepticisme werd versterkt door Brexit, vooral in landen als Frankrijk, waar partijen zoals het Front National de EU steeds meer in twijfel trokken.`;
+    } else {
+        document.getElementById('feedback-q6').innerHTML = `Fout. Het juiste antwoord is: ${correctAnswer6}`;
+    }
+
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').innerHTML = "Je score is: " + score + " van de 6";
+}
+</script>
+
+    <div id="Docentenhoek" class="tabcontent">
+        <h2>Docentenhoek</h2>
+        <p>Welkom in de <strong>Docentenhoek</strong>! Dit gedeelte is speciaal bedoeld voor docenten die het e-learning platform willen gebruiken in de klas. Hier vinden jullie handige tips en een korte handleiding om het meeste uit dit platform te halen.</p>
+ <h3>Handleiding voor gebruik:</h3>
+    <ol>
+        <li><strong>Inleiding en Doelen</strong>
+            <p>Het platform biedt een diepgaande verkenning van de politieke, economische en sociale gevolgen van de Brexit. Het doel is om leerlingen inzicht te geven in de impact van Brexit op de EU, migratie, en politieke bewegingen, met speciale nadruk op de relevante lessen voor Nederland.</p>
+        </li>
+        <li><strong>Lesplanning en Integratie</strong>
+            <ul>
+                <li>Het platform kan in 3 tot 4 lessen worden behandeld.</li>
+                <li>Elke sectie bevat interactieve quizzen, polls en discussievragen, die in de les kunnen worden gebruikt om de kennis van de leerlingen te testen en dieper op de stof in te gaan.</li>
+                <li>Het platform biedt een uitstekende gelegenheid voor groepsdiscussies over de gevolgen van Brexit voor de EU en Nederland, waarbij verschillende perspectieven kunnen worden onderzocht.</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h3>Tips voor gebruik:</h3>
+    <ul>
+        <li><strong>Actief Leren:</strong> Moedig leerlingen aan om actief deel te nemen aan de interactieve elementen zoals de quizzen en polls. Dit bevordert het kritisch denken en helpt hen de politieke, economische en sociale gevolgen van Brexit beter te begrijpen.</li>
+        <li><strong>Groepsdiscussies:</strong> Gebruik de discussievragen en polls als startpunt voor groepsdiscussies. Dit zal leerlingen helpen hun standpunten te ontwikkelen en te onderbouwen met feiten, vooral over het groeiende euroscepticisme en de toekomstige rol van Nederland in de EU.</li>
+        <li><strong>Aanvullende Bronnen:</strong> Voeg aanvullende bronnen toe zoals nieuwsartikelen, video's en actuele data over Brexit om de kennis van de leerlingen verder uit te breiden en de les meer dynamisch te maken.</li>
+        <li><strong>Toetsing en Reflectie:</strong> Na het gebruik van het platform kunnen docenten een schriftelijke reflectie of een presentatie laten maken waarin leerlingen hun inzichten over de Brexit delen. Dit kan ook dienen als een formatieve toets om het begrip van de leerlingen te evalueren.</li>
+    </ul>
+
+  <p>Met deze tools kunnen docenten het platform optimaal gebruiken om leerlingen te betrekken bij de politieke gevolgen van Brexit en hen te helpen belangrijke inzichten te ontwikkelen die ze in de toekomst kunnen toepassen.</p>
+
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
