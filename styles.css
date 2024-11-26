@@ -3,12 +3,12 @@
 :root {
     --font-primary: 'Open Sans', Arial, sans-serif;
     --color-background: #fafafa;
-    --color-primary: #2c3e50;      /* Dark Blue */
-    --color-secondary: #e67e22;    /* Orange */
-    --color-tertiary: #3498db;     /* Light Blue */
-    --color-accent: #ecf0f1;       /* Light Gray */
-    --color-text: #2c3e50;         /* Dark Text */
-    --color-text-light: #ffffff;   /* Light Text */
+    --color-primary: #2c3e50;      
+    --color-secondary: #e67e22;    
+    --color-tertiary: #3498db;    
+    --color-accent: #ecf0f1;      
+    --color-text: #2c3e50;      
+    --color-text-light: #ffffff;  
 }
 
 * {
